@@ -2,12 +2,12 @@
 service: letkamal2
 
 # Name of the container image.
-image: your-user/letkamal2
+image: kojb/letkamal2
 
 # Deploy to these servers.
 servers:
   web:
-    - 192.168.0.1
+    - 78.46.228.181
   # job:
   #   hosts:
   #     - 192.168.0.1
@@ -17,13 +17,14 @@ servers:
 # Set ssl: false if using something like Cloudflare to terminate SSL (but keep host!).
 proxy:
   ssl: true
-  host: app.example.com
+  host: letkamal2.devhub.com
+
 
 # Credentials for your image host.
 registry:
   # Specify the registry server, if you're not using Docker Hub
   # server: registry.digitalocean.com / ghcr.io / ...
-  username: your-user
+  username: kojb
 
   # Always use an access token rather than real password when possible.
   password:
@@ -48,7 +49,7 @@ env:
     # DB_HOST: 192.168.0.2
 
     # Log everything from Rails
-    # RAILS_LOG_LEVEL: debug
+    RAILS_LOG_LEVEL: debug
 
 # Aliases are triggered with "bin/kamal <alias>". You can overwrite arguments on invocation:
 # "bin/kamal logs -r job" will tail logs from the first server in the job section.
